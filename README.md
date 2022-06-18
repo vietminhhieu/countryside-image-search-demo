@@ -1,7 +1,9 @@
-# ContentBasedImageRetrival
-CBIR using histogram as image discriptors
-Index the dataset using:
-python index.py --dataset dataset --index index.csv
+# === COUNTRYSIDE IMAGE SEARCH DEMO ===
 
-Search using query image using:
-python search.py --index index.csv --query dataset/201100.jpg --result-path dataset
+## Extracting features and export to file csv
+
+- Run: python index.py --dataset dataset --index index.csv
+
+## Search using query image using:
+
+- Run: python search.py --index index.csv --query dataset/'image-name'.jpg --result-path dataset

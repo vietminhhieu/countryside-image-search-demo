@@ -23,10 +23,16 @@ class ColorDescriptor:
         segments = [(0, cX, 0, cY), (cX, w, 0, cY), (cX, w, cY, h),
             (0, cX, cY, h)]
 
+        # loop over the segments
         for (startX, endX, startY, endY) in segments:
             
             cornerMask = np.zeros(image.shape[:2], dtype = "uint8")
             cv2.rectangle(cornerMask, (startX, startY), (endX, endY), 255, -1)
+
+            # extract a color histogram from the image, then update the
+            # feature vector
             hist = self.histogram(image, cornerMask)
             features.extend(hist)
+
+        # return the feature vector    
         return features
