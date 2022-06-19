@@ -17,12 +17,12 @@ class Searcher:
         with open(self.indexPath) as f:
             # initialize the CSV reader
             reader = csv.reader(f)
-            # loop over the rows in the index
+            # duyệt từng vector đặc trưng của bức ảnh
             for row in reader:
             
                 features = [float(x) for x in row[1:]]
                 d = self.chi2_distance(features, queryFeatures)
-            
+
                 results[row[0]] = d
             # close the reader
             f.close()

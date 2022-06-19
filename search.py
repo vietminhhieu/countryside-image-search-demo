@@ -14,10 +14,11 @@ args = vars(ap.parse_args())
 # initialize the image descriptor
 cd = ColorDescriptor((8, 12, 3))
 
-
+# đọc một bức ảnh cần truy vấn
 query = cv2.imread(args["query"])
 features = cd.describe(query)
-# perform the search
+
+# tìm kiếm ảnh giống nhất
 searcher = Searcher(args["index"])
 results = searcher.search(features)
 # display the query

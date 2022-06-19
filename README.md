@@ -6,4 +6,4 @@
 
 ## Search using query image using:
 
-- Run: python search.py --index index.csv --query dataset/'image-name'.jpg --result-path dataset
+- Run: python search.py --index index.csv --query test/'image-name'.jpg --result-path dataset
